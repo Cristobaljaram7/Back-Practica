@@ -7,7 +7,7 @@ const cors = require('cors');
 const cookieParser = require("cookie-parser");
 
 app.use(cors({
-    origin: "http://localhost:5173", // 🔥 Permite solicitudes solo desde el frontend
+    origin: ["https://charlas-sgi.apidev.info/", "https://front-practica.pages.dev/"], // 🔥 Permite solicitudes solo desde el frontend
     credentials: true // 🔥 Permite cookies
 }));
 
