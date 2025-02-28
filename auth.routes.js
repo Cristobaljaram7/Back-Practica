@@ -52,6 +52,7 @@ const verifyToken = (req, res, next) => {
 
 // **Formulario**
 const formSchema = new mongoose.Schema({
+    fecha:{type: String},
     descripcion: {type: String, required: true},
     nombre: { type: String, required: true },
     rut: { type: String, required: true },
@@ -163,6 +164,7 @@ router.post('/enviar-formulario', verifyToken, upload.array('image', 3), async (
 
         // Crear y guardar el nuevo formulario con las imágenes
         const nuevoFormulario = new Formulario({
+            fecha:new Date().toISOString().split('T')[0],
             descripcion,
             nombre,
             rut,
